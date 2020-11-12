@@ -9,30 +9,38 @@ class Player {
   }
 
   display() {
-    rect(this.x, this.y, this.r, this.r);
+    image(playerImg, this.x, this.y, this.r, this.r);
+    // rect(this.x, this.y, this.r, this.r);
   }
 
   move() {
-
     switch (this.direction) {
       case 'still':
         //dont move anything
         break;
       case 'up':
         //decrease y position
-        this.y -= this.speed;
+        if (this.y > 0) {
+          this.y -= this.speed;
+        }
         break;
       case 'down':
         //increase y podiyion
-        this.y += this.speed;
+        if (this.y < h - this.r) {
+          this.y += this.speed;
+        }
         break;
       case 'left':
         //decrease x position
-        this.x -= this.speed;
+        if (this.x > 0) {
+          this.x -= this.speed;
+        }
         break;
       case 'right':
         //increase x positionX
-        this.x += this.speed;
+        if (this.x < w - this.r) {
+          this.x += this.speed;
+        }
         break;
       default:
         break;

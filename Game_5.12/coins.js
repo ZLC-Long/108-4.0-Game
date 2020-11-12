@@ -6,7 +6,9 @@ class Coins{
   }
 
   display(){
-    rect(this.x, this.y, this.r, this.r);
+    image(coinsImg, this.x, this.y, this.r, this.r);
+    // rect(this.x, this.y, this.r, this.r);
+
   }
 
     move(){
